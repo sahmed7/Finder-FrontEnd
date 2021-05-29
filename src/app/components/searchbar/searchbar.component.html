@@ -1,0 +1,14 @@
+<form class="form-inline waves-light">
+  <div class="md-form mt-0">
+    <input class="form-control mr-sm-2" type="text" placeholder="Search" [(ngModel)]="searchText"
+           [ngModelOptions]="{standalone: true}">
+  </div>
+
+<!--  <div *ngIf="searchText !== ''">-->
+<!--    <ul *ngFor="let city of cities | filter: searchText">-->
+<!--      <a routerLink="cities/{{city.id}}"> {{city.name}} </a>-->
+<!--    </ul>-->
+<!--  </div>-->
+
+  <button size="sm" class="search" type="submit">Search</button>
+</form>

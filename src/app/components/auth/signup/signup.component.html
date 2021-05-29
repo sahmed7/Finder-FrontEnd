@@ -1,0 +1,40 @@
+<div class="container login-page">
+  <h2 class="white-text center-align">Register Now</h2>
+  <div class="col s12 z-depth-6 card-panel">
+
+    <form class="login-form">
+      <div class="row"></div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix"></i>
+          <input [(ngModel)]="userName" type="text" id="username" name="username">
+          <label for="username" data-error="wrong" data-success="right">Username</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix"></i>
+          <input [(ngModel)]="emailAddress" name="email" class="validate" id="email" type="email">
+          <label for="email" data-error="wrong" data-success="right">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix"></i>
+          <input [(ngModel)]="password" name="password" id="password" type="password">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <button (click)="registerUser()" class="btn waves-effect red darken-3 col s12">Sign Up</button>
+        </div>
+      </div>
+      <div class="row">
+        <p class="margin medium-small center-align"><a routerLink="/login">Already registered?</a></p>
+      </div>
+      <p class="center-align red-text">{{errorText}}</p>
+    </form>
+
+  </div>
+</div>

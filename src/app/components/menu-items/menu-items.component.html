@@ -1,0 +1,46 @@
+<div *ngIf="!editAction" class="row menuItem">
+  <h2 class="white-text center-align">Adding Menu Item...</h2>
+  <form class="col s12 card-panel">
+    <div class="row">
+      <div class="input-field col s6">
+        <input [(ngModel)]="menuItemName" name="menuItemName" type="text">
+        <label>Enter Menu Item Name here:</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input [(ngModel)]="menuItemDescription" name="menuItemDescription" type="text">
+        <label>Enter Description here: </label>
+      </div>
+    </div>
+    <div class="row">
+      <a (click)="addMenuItem()" routerLink="/restaurants" class="waves-effect waves-light btn"><i class="material-icons left">save</i></a>
+      <p class="center-align red-text">{{errorText}}</p>
+    </div>
+  </form>
+</div>
+
+
+<div *ngIf="editAction" class="row menuItem">
+  <h2 class="white-text center-align">Editing Menu Item...</h2>
+  <form *ngIf="singleMenuItem" class="col s12 card-panel">
+    <div class="row">
+      <div class="input-field col s6">
+        <p>Enter new item name below:</p>
+        <input [(ngModel)]="menuItemName" name="menuItemName" type="text" [placeholder]="singleMenuItem[0].name">
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <p>Enter new description below:</p>
+        <input [(ngModel)]="menuItemDescription" name="menuItemDescription" type="text" [placeholder]="singleMenuItem[0].description">
+      </div>
+    </div>
+    <div class="row">
+      <a (click)="updateMenuItem()" id="save" routerLink="/restaurants" class="waves-effect waves-light btn"><i class="material-icons left">save</i></a>
+      <p class="center-align red-text">{{errorText}}</p>
+      <a (click)="deleteMenuItem()" id="delete" routerLink="/restaurants" class="waves-effect waves-light btn"><i class="material-icons left">delete</i></a>
+
+    </div>
+  </form>
+</div>
